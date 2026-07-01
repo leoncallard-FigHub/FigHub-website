@@ -334,6 +334,85 @@
   footer p { font-size: 12px; color: rgba(255,255,255,0.25); line-height: 1.9; }
   footer a { color: rgba(255,255,255,0.25); text-decoration: none; }
 
+  /* Hero tagline + download buttons */
+  .hero-tagline {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--blue);
+    margin: 0 auto 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-tagline span { color: var(--gold); }
+  .dl-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; margin-bottom: 18px; }
+  .dl-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 22px; border-radius: 14px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14);
+    color: white; text-decoration: none; transition: transform 0.15s, border-color 0.15s;
+    cursor: pointer;
+  }
+  .dl-btn:hover { transform: translateY(-3px); border-color: var(--blue); }
+  .dl-btn .dl-ico { font-size: 24px; }
+  .dl-btn .dl-txt { text-align: left; line-height: 1.2; }
+  .dl-btn .dl-small { display: block; font-size: 10px; color: rgba(255,255,255,0.5); font-weight: 600; }
+  .dl-btn .dl-big { display: block; font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; }
+  .dl-soon { font-size: 12px; color: rgba(255,255,255,0.35); position: relative; z-index: 1; }
+
+  /* Rarity showcase */
+  .rarity { background: var(--slate); padding: 80px 24px; }
+  .rarity-inner { max-width: 980px; margin: 0 auto; }
+  .rarity-top { text-align: center; margin-bottom: 44px; }
+  .rarity-top .pill-badge { background: rgba(255,179,0,0.15); color: var(--gold); }
+  .rarity-top h2 { font-family: 'Nunito', sans-serif; font-size: clamp(26px, 4vw, 40px); font-weight: 900; color: white; margin-bottom: 12px; }
+  .rarity-top p { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto; line-height: 1.65; }
+  .rarity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; }
+  .rtier {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px; padding: 22px 16px; text-align: center; position: relative; overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .rtier:hover { transform: translateY(-5px); }
+  .rtier-bar { position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+  .rtier-gem { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rtier-name { font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; color: white; margin-bottom: 4px; }
+  .rtier-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+
+  /* Pricing */
+  .pricing { background: white; padding: 90px 24px; }
+  .pricing .section-top { margin-bottom: 44px; }
+  .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; max-width: 940px; margin: 0 auto; align-items: stretch; }
+  .pcard {
+    background: var(--light); border-radius: 24px; padding: 32px 28px;
+    display: flex; flex-direction: column; position: relative; overflow: hidden;
+    border: 2px solid transparent; transition: transform 0.2s;
+  }
+  .pcard:hover { transform: translateY(-6px); }
+  .pcard.featured { border-color: var(--blue); box-shadow: 0 20px 50px rgba(79,142,247,0.18); }
+  .pcard-flag { position: absolute; top: 16px; right: -34px; transform: rotate(45deg); background: var(--blue); color: white; font-size: 11px; font-weight: 800; padding: 4px 40px; font-family: 'Nunito', sans-serif; }
+  .pname { font-family: 'Nunito', sans-serif; font-size: 20px; font-weight: 900; color: var(--slate); margin-bottom: 6px; }
+  .pprice { font-family: 'Nunito', sans-serif; font-size: 34px; font-weight: 900; color: var(--slate); line-height: 1; margin-bottom: 4px; }
+  .pprice small { font-size: 14px; font-weight: 700; color: #8891b0; }
+  .pfree { color: var(--teal); }
+  .plist { list-style: none; margin: 22px 0 26px; padding: 0; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .plist li { font-size: 14px; color: #4a5278; line-height: 1.5; padding-left: 26px; position: relative; }
+  .plist li::before { content: '✓'; position: absolute; left: 0; color: var(--blue); font-weight: 900; }
+  .pbtn {
+    display: block; text-align: center; padding: 13px; border-radius: 50px;
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px;
+    text-decoration: none; cursor: pointer; transition: transform 0.15s;
+    background: var(--slate); color: white; border: none;
+  }
+  .pcard.featured .pbtn { background: var(--blue); }
+  .pbtn:hover { transform: scale(1.03); }
+
+  /* Footer additions */
+  .foot-links { margin-bottom: 10px; }
+  .foot-links a { color: rgba(255,255,255,0.45); }
+  .foot-social a { color: var(--blue); text-decoration: none; font-weight: 700; }
+
   @media (max-width: 600px) {
     .workshop-layout { grid-template-columns: 1fr; }
     .wph-wrap { display: none; }
@@ -355,8 +434,9 @@
 <section class="hero">
   <img src="data:image/png;base64,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" alt="FigHub" class="hero-logo" />
   <div class="launch-pill"><span class="pulse"></span> Coming soon to iOS & Android</div>
-  <h1>The home for<br><em>minifigure</em> collectors</h1>
-  <p class="hero-sub">Point. Scan. Collect. FigHub does the hard work so you can focus on the fun.</p>
+  <h1>Know every <em>minifigure</em> in your collection</h1>
+  <p class="hero-tagline">Scan. Collect. <span>Value.</span></p>
+  <p class="hero-sub">Snap a photo and our AI names any minifigure in seconds — then track, complete and value your whole collection in one place.</p>
 
   <!-- Mailchimp Hero Form -->
   <form action="https://app.us18.list-manage.com/subscribe/post?u=1a9879aba3df6aa42db732f81&amp;id=368af6e6be&amp;f_id=00e0a5e6f0" method="post" id="hero-mc-form" target="_blank" novalidate>
@@ -367,6 +447,18 @@
     </div>
   </form>
   <p class="hero-note">No spam, ever. Just the good stuff.</p>
+
+  <div class="dl-btns">
+    <a class="dl-btn" href="#download" role="button" aria-label="Download on the App Store (coming soon)">
+      <span class="dl-ico">🍎</span>
+      <span class="dl-txt"><span class="dl-small">Coming soon to</span><span class="dl-big">App Store</span></span>
+    </a>
+    <a class="dl-btn" href="#download" role="button" aria-label="Get it on Google Play (coming soon)">
+      <span class="dl-ico">▶</span>
+      <span class="dl-txt"><span class="dl-small">Coming soon to</span><span class="dl-big">Google Play</span></span>
+    </a>
+  </div>
+  <p class="dl-soon">App store links are placeholders — sign up above and we'll tell you the moment we launch.</p>
 
   <div class="hero-phones">
     <div class="phone-mock">
@@ -409,32 +501,87 @@
     <div class="fcard">
       <div class="fcard-bar" style="background:var(--blue)"></div>
       <span class="fcard-icon">📸</span>
-      <h3>AI-Powered Scanning</h3>
-      <p>Point your camera at any minifig and our AI identifies it in seconds — no manual searching required.</p>
-    </div>
-    <div class="fcard">
-      <div class="fcard-bar" style="background:var(--gold)"></div>
-      <span class="fcard-icon">🔧</span>
-      <h3>The Workshop</h3>
-      <p>Got incomplete figs or mystery parts? We'll help you piece them together, one scan at a time.</p>
+      <h3>AI Scan</h3>
+      <p>Photograph any minifigure and our AI identifies it in seconds — name, theme and catalogue ID, no manual searching.</p>
     </div>
     <div class="fcard">
       <div class="fcard-bar" style="background:var(--teal)"></div>
-      <span class="fcard-icon">💰</span>
-      <h3>Collection Value</h3>
-      <p>Know what your collection is worth with live market pricing from real marketplace data.</p>
+      <span class="fcard-icon">🗂️</span>
+      <h3>Collection Management</h3>
+      <p>Organised by theme and searchable by name or ID. Track quantities and build your own custom categories.</p>
     </div>
     <div class="fcard">
       <div class="fcard-bar" style="background:var(--pink)"></div>
       <span class="fcard-icon">🧩</span>
       <h3>Set Completion</h3>
-      <p>See which sets your minifigs came from and find what's missing from your collection.</p>
+      <p>See which sets your minifigures belong to, track your completion progress and find the missing figures on eBay.</p>
+    </div>
+    <div class="fcard">
+      <div class="fcard-bar" style="background:var(--gold)"></div>
+      <span class="fcard-icon">💰</span>
+      <h3>Collection Value</h3>
+      <p>Real market prices from BrickLink and eBay, with your total collection value tracked over time.</p>
     </div>
     <div class="fcard">
       <div class="fcard-bar" style="background:#9B6DFF"></div>
-      <span class="fcard-icon">🏆</span>
-      <h3>Badges & Milestones</h3>
-      <p>Earn badges as your collection grows and celebrate every milestone along the way.</p>
+      <span class="fcard-icon">🔧</span>
+      <h3>The Workshop</h3>
+      <p>Identify mystery or incomplete minifigures part by part until every figure is solved.</p>
+    </div>
+    <div class="fcard">
+      <div class="fcard-bar" style="background:var(--blue)"></div>
+      <span class="fcard-icon">⭐</span>
+      <h3>Wishlist</h3>
+      <p>Save the minifigures you're hunting for and jump straight to eBay listings to buy them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RARITY -->
+<section class="rarity">
+  <div class="rarity-inner">
+    <div class="rarity-top">
+      <div class="pill-badge">💎 RARITY SYSTEM</div>
+      <h2>Six tiers, from Common to Unique</h2>
+      <p>Every minifigure is scored on value and scarcity, then sorted into one of six rarity tiers — so you can spot the gems at a glance.</p>
+    </div>
+    <div class="rarity-grid">
+      <div class="rtier">
+        <div class="rtier-bar" style="background:#8891b0"></div>
+        <span class="rtier-gem">⚪</span>
+        <div class="rtier-name">Common</div>
+        <div class="rtier-tag" style="color:#8891b0">TIER 1</div>
+      </div>
+      <div class="rtier">
+        <div class="rtier-bar" style="background:#00C9A7"></div>
+        <span class="rtier-gem">🟢</span>
+        <div class="rtier-name">Uncommon</div>
+        <div class="rtier-tag" style="color:#00C9A7">TIER 2</div>
+      </div>
+      <div class="rtier">
+        <div class="rtier-bar" style="background:#4F8EF7"></div>
+        <span class="rtier-gem">🔵</span>
+        <div class="rtier-name">Rare</div>
+        <div class="rtier-tag" style="color:#4F8EF7">TIER 3</div>
+      </div>
+      <div class="rtier">
+        <div class="rtier-bar" style="background:#9B6DFF"></div>
+        <span class="rtier-gem">🟣</span>
+        <div class="rtier-name">Epic</div>
+        <div class="rtier-tag" style="color:#9B6DFF">TIER 4</div>
+      </div>
+      <div class="rtier">
+        <div class="rtier-bar" style="background:#FFB300"></div>
+        <span class="rtier-gem">🟡</span>
+        <div class="rtier-name">Legendary</div>
+        <div class="rtier-tag" style="color:#FFB300">TIER 5</div>
+      </div>
+      <div class="rtier">
+        <div class="rtier-bar" style="background:#FF6B9D"></div>
+        <span class="rtier-gem">💎</span>
+        <div class="rtier-name">Unique</div>
+        <div class="rtier-tag" style="color:#FF6B9D">TIER 6</div>
+      </div>
     </div>
   </div>
 </section>
@@ -478,10 +625,10 @@
     <div class="screen-frame">
       <div class="screen-phone">
         <div class="screen-notch"></div>
-        <span class="screen-icon">🏆</span>
+        <span class="screen-icon">💎</span>
         <span class="screen-label-inner">Screenshot coming soon</span>
       </div>
-      <span class="screen-caption">Badges</span>
+      <span class="screen-caption">Rarity Tiers</span>
     </div>
   </div>
 </section>
@@ -532,18 +679,73 @@
 <!-- COMMUNITY -->
 <section class="community">
   <div class="comm-pill">💛 OUR COMMUNITY</div>
-  <h2>More than an app.<br><em>A home for collectors.</em></h2>
+  <h2>Show off your collection.<br><em>Connect with collectors.</em></h2>
   <div class="vision-card">
-    <p>FigHub is built by collectors, <em>for collectors.</em> We know the joy of finding a rare fig, the frustration of mystery parts, and the <span>satisfaction of a complete collection.</span> Whatever your collection looks like — big, small, chaotic, or obsessively organised — you belong here.</p>
+    <p>Build a <em>public profile</em>, add fellow collectors to your <em>collector list</em>, and <span>share your collection</span> with the people who get it. Browse what others have hunted down, swap notes, and find your people.</p>
   </div>
-  <p class="vision-sub">We're just getting started. Join us at launch and help shape what FigHub becomes — because the best collector apps are built with their community, not just for them.</p>
+  <p class="vision-sub">FigHub is built by collectors, for collectors. Join us at launch and help shape what the community becomes — because the best collector apps are built with their community, not just for them.</p>
   <div class="hearts">🧱 🤝 🏆 ✨ 🎉</div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <h2>Ready to start <em>collecting smarter?</em></h2>
-  <p>Sign up and we'll let you know the moment FigHub launches. 🚀</p>
+<!-- PRICING -->
+<section class="pricing">
+  <div class="section-top">
+    <div class="pill-badge">💸 SIMPLE PRICING</div>
+    <h2>Start free, upgrade when you're ready</h2>
+  </div>
+  <div class="price-grid">
+    <div class="pcard">
+      <div class="pname">Free</div>
+      <div class="pprice pfree">£0</div>
+      <ul class="plist">
+        <li>10 scans per month</li>
+        <li>Up to 50 minifigures in your collection</li>
+        <li>Free cloud backup — your collection stays safe forever</li>
+      </ul>
+      <a class="pbtn" href="#download">Get started</a>
+    </div>
+    <div class="pcard featured">
+      <div class="pcard-flag">POPULAR</div>
+      <div class="pname">Premium</div>
+      <div class="pprice">£4.99<small> / month</small></div>
+      <ul class="plist">
+        <li>50 scans per month</li>
+        <li>Unlimited collection size</li>
+        <li>Basic analytics</li>
+        <li>Shareable public profile</li>
+      </ul>
+      <a class="pbtn" href="#download">Go Premium</a>
+    </div>
+    <div class="pcard">
+      <div class="pname">Pro</div>
+      <div class="pprice">£9.99<small> / month</small></div>
+      <ul class="plist">
+        <li>Unlimited scans</li>
+        <li>Full analytics — value over time & projections</li>
+        <li>Bulk scan</li>
+        <li>CSV export</li>
+        <li>PDF collection report</li>
+      </ul>
+      <a class="pbtn" href="#download">Go Pro</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / DOWNLOAD -->
+<section class="cta" id="download">
+  <h2>Coming soon to <em>Google Play &amp; the App Store</em></h2>
+  <p>The apps are on their way. Drop your email and we'll tell you the moment FigHub launches. 🚀</p>
+  <div class="dl-btns">
+    <a class="dl-btn" href="#download" role="button" aria-label="Download on the App Store (coming soon)">
+      <span class="dl-ico">🍎</span>
+      <span class="dl-txt"><span class="dl-small">Coming soon to</span><span class="dl-big">App Store</span></span>
+    </a>
+    <a class="dl-btn" href="#download" role="button" aria-label="Get it on Google Play (coming soon)">
+      <span class="dl-ico">▶</span>
+      <span class="dl-txt"><span class="dl-small">Coming soon to</span><span class="dl-big">Google Play</span></span>
+    </a>
+  </div>
+  <p class="dl-soon">Store links are placeholders for now — early-access signups get first access.</p>
   <!-- Mailchimp CTA Form -->
   <form action="https://app.us18.list-manage.com/subscribe/post?u=1a9879aba3df6aa42db732f81&amp;id=368af6e6be&amp;f_id=00e0a5e6f0" method="post" id="cta-mc-form" target="_blank" novalidate>
     <div class="email-row">
@@ -555,10 +757,14 @@
 </section>
 
 <footer>
+  <p class="foot-links">
+    <a href="legal.html#privacy-policy">Privacy Policy</a> · <a href="legal.html#terms">Terms &amp; Conditions</a> · <a href="legal.html" style="color:#4a5568;">Legal</a> · <a href="mailto:hello@fighub.app">hello@fighub.app</a>
+  </p>
+  <p class="foot-social">Follow us on Instagram, TikTok &amp; X — <a href="https://instagram.com/fighubapp">@fighubapp</a></p>
   <p>
     © 2026 FigHub. All rights reserved.<br>
     FigHub is not affiliated with or endorsed by the LEGO Group.<br>
-    <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a>
+    fighub.app
   </p>
 </footer>
 

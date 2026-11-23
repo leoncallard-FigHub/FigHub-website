@@ -150,6 +150,15 @@
     nav .brand { width: 100%; margin-bottom: 4px; }
     .wrap { padding: 32px 18px 0; }
   }
+
+  ol { margin: 12px 0 12px 22px; padding: 0; }
+  ol li { padding-left: 4px; }
+  ol li::before { display: none; }
+  .table-wrap { overflow-x: auto; margin: 16px 0; border: 1px solid var(--line); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; min-width: 460px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { color: #fff; font-family: 'Nunito', sans-serif; font-weight: 800; background: var(--slate-soft); }
+  tr:last-child td { border-bottom: none; }
 </style>
 </head>
 <body>
@@ -157,7 +166,7 @@
 <nav>
   <div class="brand">Fig<span>Hub</span></div>
   <a class="navlink" href="#privacy-policy">Privacy Policy</a>
-  <a class="navlink" href="#terms">Terms &amp; Conditions</a>
+  <a class="navlink" href="#terms">Terms of Service</a>
   <a class="navlink" href="#company-information">Company Information</a>
 </nav>
 
@@ -167,330 +176,168 @@
   <section class="doc" id="privacy-policy">
     <div class="doc-head">
       <h1 class="doc-title">Privacy Policy</h1>
-      <p class="doc-meta"><strong>FigHub Ltd</strong> &nbsp;|&nbsp; hello@fighub.app &nbsp;·&nbsp; Last updated: 29 June 2026</p>
+      <p class="doc-meta"><strong>FigHub Ltd</strong> &nbsp;|&nbsp; hello@fighub.app &nbsp;·&nbsp; Last updated: 23 November 2026</p>
     </div>
-
-    <h2>1. Who We Are</h2>
-    <p>FigHub ("we", "us", "our") is a mobile application developed by FigHub Ltd. We are the data controller responsible for your personal data.</p>
-    <p>FigHub Ltd is a private limited company registered in England and Wales (Company No. 17307481), registered with the Information Commissioner's Office as a data controller (ICO No. ZC185049). You can contact us at <a href="mailto:hello@fighub.app">hello@fighub.app</a> for any privacy-related queries.</p>
-    <p>We process your personal data in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
-
-    <h2>2. Your Personal Minifigure Photos</h2>
-    <p>This section is about the photos you choose to take of your own minifigures to build your personal collection. These are different from the scan photos used for AI identification, which are covered separately in Section 3.</p>
-    <p>In plain English:</p>
-    <ul>
-      <li><strong>Where they are stored.</strong> Personal photos you take of your minifigures are stored securely in Supabase Storage, our cloud storage provider.</li>
-      <li><strong>What they are linked to.</strong> Each photo is linked to your personal collection record so it appears alongside the right minifigure in your collection.</li>
-      <li><strong>Who can see them.</strong> If you make your profile public, or share your collection with people on your collector list, your personal minifigure photos may be visible to those other users. If your profile is private, only you can see them.</li>
-      <li><strong>You control who sees them.</strong> You decide who can see your photos using your privacy settings. The options are <strong>Everyone</strong>, <strong>Collector list only</strong>, or <strong>Nobody</strong>.</li>
-      <li><strong>You can delete them at any time.</strong> You can remove any personal photo whenever you like from the edit screen for that minifigure. Deleting a photo removes it from your collection record.</li>
-    </ul>
-
-    <h2>3. Scan Images and AI Identification</h2>
-    <div class="callout"><strong>Please read this section carefully</strong> — it explains exactly what happens to the photos you take when you scan a minifigure, and how to opt out of AI training.</div>
-    <p>When you scan a minifigure using the FigHub app, here is what happens to that scan image, in plain English:</p>
-    <ul>
-      <li><strong>The photo is sent to OpenAI for identification.</strong> Your scan photo is sent to OpenAI's GPT-4o model, which identifies the minifigure for you. OpenAI processes the image as part of providing the identification result. OpenAI's handling of data is governed by their own privacy policy, available at <a href="https://openai.com/privacy">https://openai.com/privacy</a>.</li>
-      <li><strong>An anonymised copy is kept to improve identification accuracy.</strong> FigHub keeps an anonymised copy of the scan image so we can improve the accuracy of our AI identification over time.</li>
-      <li><strong>Anonymised images are not linked to you.</strong> Once a scan image has been anonymised, it is no longer connected to your account or any other personal data. It cannot be used to identify you.</li>
-      <li><strong>You can opt out of AI training at any time.</strong> Go to <strong>Settings → Privacy → "Contribute to AI training"</strong> and turn the toggle off. When you opt out, your scan images are not retained or used to train or improve our AI.</li>
-      <li><strong>Opting out does not stop you scanning.</strong> AI identification still works exactly the same way whether the toggle is on or off. Opting out only affects whether your scan images are kept to help improve the AI — it does not limit your ability to scan minifigures.</li>
-    </ul>
-    <p>The Workshop feature also uses AI scanning. The same data handling described in this section applies to Workshop scans as well as standard minifigure scans.</p>
-
-    <h2>4. Other Data We Collect</h2>
-    <h3>4.1 Scan and Identification Data</h3>
-    <p>For each confirmed scan we collect:</p>
-    <ul>
-      <li>The minifigure ID (BrickLink and/or Rebrickable format)</li>
-      <li>The AI-generated identification result and confidence score</li>
-      <li>Data returned from third-party APIs about the identified minifigure</li>
-      <li>Timestamp of the scan</li>
-      <li>Whether the identification was confirmed or corrected by you</li>
-    </ul>
-    <h3>4.2 Collection Data</h3>
-    <p>We store your personal collection of minifigures, including any personal details you add such as notes, condition, purchase price, and purchase date. If you are a registered user, your collection may also be synced to our servers.</p>
-    <h3>4.3 Usage and Analytics Data</h3>
-    <p>We collect usage data including:</p>
-    <ul>
-      <li>Number of scans performed</li>
-      <li>Features used within the app</li>
-      <li>Subscription tier and upgrade events</li>
-      <li>API call counts for internal monitoring and service improvement</li>
-      <li>App open and session data</li>
-    </ul>
-    <p>This data is used for internal analytics, improving the app, and informing business decisions including commercial partnerships. We may share aggregated, anonymised analytics data with third parties.</p>
-    <h3>4.4 Subscription and Payment Data</h3>
-    <p>If you upgrade to a Premium or Pro subscription, payment processing is handled by RevenueCat and the relevant app store. FigHub Ltd does not store your payment card details. We receive confirmation of your subscription status from RevenueCat.</p>
-    <h3>4.5 Device Data</h3>
-    <p>We may collect basic device information such as device type, operating system version, and app version to diagnose technical issues and ensure compatibility.</p>
-
-    <h2>5. How We Use Your Data</h2>
-    <p>We use the data we collect for the following purposes:</p>
-    <ul>
-      <li>To provide the core functionality of the app</li>
-      <li>To improve the accuracy of our AI identification systems, using anonymised scan images from users who have not opted out of AI training (see Section 3)</li>
-      <li>To build and develop proprietary datasets and machine learning models</li>
-      <li>To manage your subscription and enforce tier limits</li>
-      <li>To monitor app performance, diagnose errors, and improve the service</li>
-      <li>To display affiliate links to third-party marketplaces</li>
-      <li>To generate collection valuation reports (Premium and Pro tiers)</li>
-      <li>To send notifications about your collection, if enabled</li>
-      <li>To inform product development, business strategy, and commercial decisions</li>
-    </ul>
-
-    <h2>6. Legal Basis for Processing</h2>
-    <p>Under UK GDPR, we rely on the following legal bases:</p>
-    <ul>
-      <li><strong>Contract performance</strong> — processing necessary to provide the service you have requested</li>
-      <li><strong>Legitimate interests</strong> — improving our AI systems, developing proprietary datasets, and operating and growing our business</li>
-      <li><strong>Consent</strong> — where you have explicitly agreed to our Terms and Conditions, and where you have chosen to leave the "Contribute to AI training" setting switched on</li>
-    </ul>
-
-    <h2>7. Your Collector List</h2>
-    <p>FigHub lets you connect with other collectors. In plain English:</p>
-    <ul>
-      <li><strong>You can add other collectors to your collector list.</strong> This lets you share parts of your collection with people you choose.</li>
-      <li><strong>Collectors on your list may see your collection, profile, and collection value</strong> — but only to the extent allowed by your privacy settings.</li>
-      <li><strong>You control exactly what is visible.</strong> Your privacy settings decide what people on your collector list can and cannot see.</li>
-      <li><strong>You can remove a collector at any time.</strong> Removing someone from your collector list is immediate, and it instantly revokes their access to the data you had been sharing with them.</li>
-    </ul>
-
-    <h2>8. Public Profiles</h2>
-    <ul>
-      <li><strong>Public profiles are opt-in, and your profile is private by default.</strong> Your profile only becomes public if you choose to make it public.</li>
-      <li><strong>What is visible depends on your privacy settings.</strong> You control what information appears on your public profile.</li>
-      <li><strong>Your shareable profile link.</strong> If your profile is public, it can be reached at a link in the form <code>fighub.app/collection/username</code>. Anyone who has that link can view your public profile. If your profile is private, the link is not accessible to others.</li>
-    </ul>
-
-    <h2>9. Data Sharing and Third-Party Services</h2>
-    <p>We work with the following third-party service providers. Each processes data on our behalf under appropriate agreements, and each has its own privacy policy:</p>
-    <ul>
-      <li><strong>Supabase</strong> (database and storage) — <a href="https://supabase.com/privacy">https://supabase.com/privacy</a></li>
-      <li><strong>OpenAI</strong> (AI identification) — <a href="https://openai.com/privacy">https://openai.com/privacy</a></li>
-      <li><strong>BrickLink</strong> (pricing data) — <a href="https://www.bricklink.com/v3/default.page">https://www.bricklink.com/v3/default.page</a></li>
-      <li><strong>eBay</strong> (pricing data) — <a href="https://www.ebay.co.uk/help/policies/member-behaviour-policies/privacy-notice">https://www.ebay.co.uk/help/policies/member-behaviour-policies/privacy-notice</a></li>
-      <li><strong>RevenueCat</strong> (subscriptions) — <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></li>
-      <li><strong>Brevo</strong> (transactional email) — <a href="https://www.brevo.com/legal/privacypolicy">https://www.brevo.com/legal/privacypolicy</a></li>
-    </ul>
-    <p>We may also share your data in the following circumstances:</p>
-    <ul>
-      <li><strong>Business transfers</strong> — in the event of a merger, acquisition, investment, restructuring, or sale of all or part of FigHub Ltd's assets (including its dataset), your data may be transferred to the acquiring or successor entity. That entity will be notified of their obligations under this policy and applicable data protection law.</li>
-      <li><strong>Anonymised and aggregated data</strong> — we may share, licence, or sell anonymised or aggregated data (from which individual users cannot reasonably be identified) with third parties for research, commercial, or analytical purposes.</li>
-      <li><strong>Legal requirements</strong> — we may disclose data where required by law, regulation, or legal process.</li>
-    </ul>
-    <p>We do not sell personally identifiable data to third parties for their own direct marketing purposes.</p>
-
-    <h2>10. Data Retention</h2>
-    <p>We retain your data for the following periods:</p>
-    <ul>
-      <li><strong>Scan images and identification data</strong> — for users who have not opted out of AI training, anonymised scan images may be retained as part of our training dataset (see Sections 3 and 11). Identification data is retained for as long as necessary for the purposes described in this policy.</li>
-      <li><strong>Your personal collection data</strong> — retained for as long as you use the app, and deleted on the schedule set out in Section 11 when you delete your account.</li>
-      <li><strong>Analytics data</strong> — retained for as long as commercially useful, typically up to 36 months for identifiable data.</li>
-      <li><strong>Subscription data</strong> — retained as required by applicable law and accounting obligations.</li>
-    </ul>
-
-    <h2>11. Account Deletion and Soft Delete</h2>
-    <p>If you delete your FigHub account, in plain English:</p>
-    <ul>
-      <li><strong>Your personal data is kept for 30 days first.</strong> When you delete your account, we do not erase your personal data immediately. We retain it for 30 days.</li>
-      <li><strong>This 30-day grace period lets us recover accidentally deleted accounts.</strong> If you deleted your account by mistake, this window gives us the chance to restore it.</li>
-      <li><strong>After 30 days, your personal data is permanently and irreversibly deleted.</strong> Once the grace period ends, your personal data cannot be recovered.</li>
-      <li><strong>Anonymised scan images are not deleted.</strong> Anonymised scan images that have been retained for AI training contain no personal data and are not linked to you, so they are not removed as part of account deletion. (You can prevent your scan images from being retained at all by opting out of AI training — see Section 3.)</li>
-    </ul>
-
-    <h2>12. Your Rights Under UK GDPR</h2>
-    <p>As a UK resident, you have the following rights regarding your personal data:</p>
-    <ul>
-      <li><strong>Right of access</strong> — you can request a copy of the data we hold about you (see Section 13 for how to do this).</li>
-      <li><strong>Right to rectification</strong> — you can ask us to correct inaccurate data.</li>
-      <li><strong>Right to erasure</strong> — you can ask us to delete your personal data. Note that we may retain data that has been genuinely anonymised, such as anonymised scan images held in our AI training dataset, which contain no personal data.</li>
-      <li><strong>Right to restrict processing</strong> — you can ask us to limit how we use your data.</li>
-      <li><strong>Right to data portability</strong> — you can request your data in a machine-readable format.</li>
-      <li><strong>Right to object</strong> — you can object to processing based on legitimate interests, including opting out of AI training at any time.</li>
-    </ul>
-    <p>To exercise any of these rights, contact us at <a href="mailto:hello@fighub.app">hello@fighub.app</a>. We will respond within 30 days. You also have the right to lodge a complaint with the ICO at ico.org.uk.</p>
-
-    <h2>13. Requesting a Copy of Your Data (Download My Data)</h2>
-    <p>You have the right to request a copy of all the personal data FigHub holds about you. In plain English:</p>
-    <ul>
-      <li><strong>What you can request.</strong> A copy of all personal data we hold about you. This includes your profile information, your scan history, your wishlist, and your collection personal data (such as notes, conditions, purchase prices, and purchase dates).</li>
-      <li><strong>How to request it.</strong> Email us at <a href="mailto:hello@fighub.app">hello@fighub.app</a> and ask for a copy of your data.</li>
-      <li><strong>When you will receive it.</strong> We will respond within 30 days with a data export.</li>
-      <li><strong>This is separate from the Pro CSV export.</strong> The right described here is your legal right to a full copy of your personal data. It is different from the Pro tier CSV export feature, which produces a formatted report of your collection. Both are available, but they are not the same thing.</li>
-    </ul>
-
-    <h2>14. Data Security</h2>
-    <p>We take appropriate technical and organisational measures to protect your data, including encrypted transmission, secure cloud storage, and access controls. No method of transmission or storage is completely secure. In the event of a data breach that poses a risk to your rights and freedoms, we will notify you and the ICO as required by law.</p>
-
-    <h2>15. Children's Privacy</h2>
-    <p>FigHub is not directed at children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe a child has provided us with personal data, please contact us at <a href="mailto:hello@fighub.app">hello@fighub.app</a> and we will delete it promptly.</p>
-
-    <h2>16. Cookies and Tracking</h2>
-    <p>The FigHub mobile app does not use cookies. We may use analytics SDKs that collect usage data as described in Section 4.3.</p>
-
-    <h2>17. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or business operations. We will notify you of significant changes through the app or by email. Continued use of the app after changes constitutes acceptance of the updated policy. If you do not accept the updated policy, you should stop using the app.</p>
-
-    <h2>18. Contact Us</h2>
-    <p>For any questions about this Privacy Policy or how we handle your data, please contact:</p>
-    <p><strong>FigHub Ltd</strong><br>Email: <a href="mailto:hello@fighub.app">hello@fighub.app</a></p>
-    <p>You may also contact the Information Commissioner's Office (ICO): ico.org.uk | 0303 123 1113</p>
-    <p style="color:var(--muted);font-size:13px;margin-top:24px;">© 2026 FigHub Ltd. Company No. 17307481. Registered in England and Wales.</p>
+    <h2>The short version</h2>
+    <p>FigHub is an app for LEGO® minifigure collectors aged 13 and over. This policy explains what we collect, why, who sees it and what you can do about it.</p>
+    <ul><li><strong>We collect what the app needs:</strong> your email, date of birth, username, your collection, and the photos you scan.</li><li><strong>Scan photos are checked for safety, then used to identify your figure.</strong> We don't keep them unless you choose to save one, you opt in to our photo library, or the photo is refused by our safety checks.</li><li><strong>You choose who sees your collection.</strong> Your profile is Public or Private. What you paid, your notes and the condition of your figures are never shown to anyone else.</li><li><strong>We don't sell your data and we don't show ads.</strong></li><li><strong>We use trusted companies to run the app</strong> (for example, to store data, identify figures and take payments). They're listed below.</li><li><strong>We take child safety seriously.</strong> Every photo is checked before it's used. We report child sexual abuse material to the authorities.</li><li><strong>You can delete your account at any time</strong> in Settings. It's erased after 30 days.</li><li><strong>Questions?</strong> Email hello@fighub.app.</li></ul>
+    <h2>Who we are</h2>
+    <p>FigHub is run by <strong>FigHub Ltd</strong>, a company registered in England and Wales (company number 17307481, registered office 38 Edmund Court, Basingstoke RG24 9SZ). We are the "controller" of your personal data, which means we decide how it's used and are responsible for it.</p>
+    <ul><li><strong>Contact:</strong> hello@fighub.app</li><li><strong>ICO registration:</strong> ZC185049</li></ul>
+    <p>This policy covers the FigHub app and the fighub.app website.</p>
+    <h2>What we collect and why</h2>
+    <p>You can scan and keep a collection on your phone without an account. Creating an account backs it up and lets you connect with other collectors.</p>
+    <div class="table-wrap"><table><tr><th>What</th><th>When</th><th>Why we need it</th></tr><tr><td><strong>Date of birth</strong></td><td>When you first use the app</td><td>To check you're 13 or over, and to apply extra protections if you're under 18. Only you can see it</td></tr><tr><td><strong>Email address and password</strong></td><td>When you create an account. If you sign in with Google, Google gives us your email and name</td><td>To sign you in, recover your account and send account emails. We never store your password; our sign-in provider handles it securely</td></tr><tr><td><strong>Username and profile picture</strong></td><td>A username is created for you; you can change it. A profile picture is optional</td><td>So other collectors can recognise you</td></tr><tr><td><strong>Your collection, wishlist, Workshop builds and badges</strong></td><td>As you use the app</td><td>To run the app, back up your collection and show your stats</td></tr><tr><td><strong>What you paid, when you bought it, condition and notes</strong></td><td>Only if you enter them</td><td>For your own records. Never shown to other collectors</td></tr><tr><td><strong>Scan photos</strong></td><td>When you scan a figure or part</td><td>To check the photo is safe and to identify the figure. See "Your photos"</td></tr><tr><td><strong>Your own photos of figures</strong></td><td>Only if you save one</td><td>To show your figure in your collection</td></tr><tr><td><strong>Privacy choices</strong></td><td>At sign-up and in Settings</td><td>To respect your choices</td></tr><tr><td><strong>Connections, declines and blocks</strong></td><td>If you connect with other collectors</td><td>To run connections and stop unwanted requests</td></tr><tr><td><strong>Reports you make</strong></td><td>If you report a profile or photo</td><td>To review it and keep FigHub safe</td></tr><tr><td><strong>Subscription and promo code records</strong></td><td>If you subscribe or redeem a code</td><td>To give you the right plan. Payments are handled by Google Play; we never see your card details</td></tr><tr><td><strong>Scan history and corrections</strong></td><td>When you add a figure or correct a match</td><td>To show your scan stats and improve identification</td></tr><tr><td><strong>A device ID</strong></td><td>Automatically</td><td>A random ID the app creates, used to keep your scan history together when you're not signed in, and to delete it on request. It isn't your phone's hardware ID</td></tr><tr><td><strong>IP address</strong></td><td>Automatically, in limited cases</td><td>Briefly, to limit heavy use by signed-out users; in our hosting provider's security logs; and kept if a photo matches known child sexual abuse material</td></tr><tr><td><strong>Anonymous usage stats</strong></td><td>If the switch in Settings is on</td><td>To see which features are used. See below</td></tr><tr><td><strong>Emails you send us</strong></td><td>If you contact support</td><td>To reply to you</td></tr></table></div>
+    <p><strong>Anonymous usage stats.</strong> With this on, the app records simple events such as "scan completed" against a random ID. That ID isn't linked to your account, and it resets when you sign out. We never record your name, email, photos or which figures you own. It is on by default for adults and <strong>off by default if you're under 18</strong>. You can change it any time in Settings. We delete these events after 13 months.</p>
+    <p><strong>What we don't collect.</strong> We don't collect your location, contacts or microphone. We remove location and camera details from scan photos and your own figure photos before they leave your phone. We don't use advertising IDs, and there are no ads in FigHub.</p>
+    <h2>Your photos</h2>
+    <h3>When you scan a figure or part</h3>
+    <ol><li>The app shrinks the photo and removes location and camera details.</li><li>The photo is checked for safety (see "Keeping FigHub safe").</li><li>If it passes, it's sent to Brickognize, and to OpenAI if needed, to work out which figure it is.</li><li>We don't keep it, unless one of the three cases below applies.</li></ol>
+    <p>This happens whether or not you're signed in.</p>
+    <h3>When we keep a photo</h3>
+    <ul><li><strong>You save it as your own photo of a figure.</strong> It's stored privately. Only you can see it, unless you switch on "Show my photos to other collectors".</li><li><strong>You've opted in to the photo library.</strong> See below.</li><li><strong>The photo is refused by our safety checks.</strong> We keep a copy for up to 90 days so a person can review the decision, then delete it. Photos refused as possibly sexualising a child, or linked to a child-safety report, are kept for longer so they can be reviewed and reported as the law requires. We keep the record of the check itself.</li></ul>
+    <h3>The photo library (optional, adults only)</h3>
+    <p>If you're 18 or over, you can choose to let us keep copies of your scan photos to help improve identification in future. This is <strong>off unless you turn it on</strong>, at sign-up or in Settings.</p>
+    <ul><li>Copies are stored without location details and are seen only by FigHub staff.</li><li>You can switch it off at any time. We'll ask whether you want us to <strong>keep the photos you've already shared or delete them</strong>.</li><li>If you delete your account, your copies are deleted too, unless you choose to leave them with us. Photos you leave are no longer linked to you.</li><li>It is never offered to under-18s.</li></ul>
+    <p><strong>Profile pictures</strong> are checked in the same way before they're saved. Anyone who can see your profile can see your profile picture.</p>
+    <p><strong>Take care with backgrounds.</strong> A photo can show more than the figure: a face, a room, a letter on a desk. Photograph figures on a plain surface where you can.</p>
+    <h2>What other collectors can see</h2>
+    <p>You choose <strong>Public</strong> or <strong>Private</strong> when you sign up, and can change it in your Profile at any time. There is no chat or messaging anywhere in FigHub.</p>
+    <div class="table-wrap"><table><tr><th></th><th>Private</th><th>Public</th></tr><tr><td>Can people find you?</td><td>No</td><td>Only by typing your exact username</td></tr><tr><td>Can people send you a connection request?</td><td>No</td><td>Yes. You choose whether to accept</td></tr><tr><td>Who sees your username and profile picture?</td><td>Collectors you're connected with, or have a request with</td><td>Anyone</td></tr><tr><td>Who sees your collection?</td><td>Nobody</td><td>Collectors you've connected with</td></tr><tr><td>Who sees your collection's value?</td><td>Nobody</td><td>Connected collectors, only if you switch it on</td></tr><tr><td>Who sees your own photos of figures?</td><td>Nobody</td><td>People who can see your collection, only if you switch it on</td></tr></table></div>
+    <p><strong>A public profile also shows</strong> the month you joined, how many figures you have and the badges you've earned. People who can see your collection also see your favourite figure, and your most valuable figure if you show values. If you're Private, collectors already connected with you, or with a request between you, can still find your username and picture.</p>
+    <p><strong>Never shown to anyone else:</strong> your email, date of birth, what you paid, purchase dates, condition, notes and Workshop builds.</p>
+    <p><strong>Connections.</strong> You can decline a request, disconnect, or disconnect and block. We don't notify the other person. If you do one of these by mistake, email us and we'll undo it.</p>
+    <p><strong>Share cards and exports.</strong> Share cards and collection exports are made on your phone and go only where you send them.</p>
+    <p><strong>Profile picture links.</strong> Profile pictures are stored at a web address that includes your account ID. Someone who had that exact address could open the picture even if your profile is Private.</p>
+    <h2>If you're under 18</h2>
+    <p>FigHub is for people aged 13 and over. If you're under 13, you can't create an account, and we delete anything created during sign-up.</p>
+    <p>We ask everyone for their date of birth. We take your word for it and don't check ID. If you're 13 to 17, these protections apply automatically:</p>
+    <ul><li><strong>Private by default.</strong> Your profile starts as Private. You can choose Public if you want to connect with other collectors.</li><li><strong>No selling pressure.</strong> You won't see upgrade prompts or links to buy figures. You can still choose a paid plan yourself in Settings; Google Play handles the payment and any parental approval.</li><li><strong>Usage stats are off</strong> unless you turn them on.</li><li><strong>No photo library.</strong> We never keep copies of your scan photos to improve identification.</li><li><strong>Reports are treated as urgent.</strong> Any report that involves someone under 18 is flagged as urgent to our moderation team.</li></ul>
+    <p>If you're a parent or guardian and have a question about your child's account, or want it deleted, email hello@fighub.app. To protect young people, we confirm requests through the email address on the account before we act, and we send any copy of the account's data only to that address. A deleted account can be recovered for 30 days.</p>
+    <h2>Keeping FigHub safe</h2>
+    <p>FigHub is used by teenagers as well as adults, so we check content before it's used. UK law (the Online Safety Act 2023) also requires us to do this.</p>
+    <h3>Automatic checks on every photo and username</h3>
+    <ul><li><strong>Known child sexual abuse material.</strong> A digital fingerprint of each photo (not the photo itself) is compared with a database of known illegal images, using Microsoft PhotoDNA.</li><li><strong>Other harmful content.</strong> Each photo, and each username you choose, is checked by an automated moderation service run by OpenAI.</li><li>We keep a record of each photo check: the result, a fingerprint of the image, and your account ID if you're signed in. We don't keep photos that pass.</li></ul>
+    <h3>If a photo is refused</h3>
+    <ul><li>It isn't added, and the app tells you.</li><li>We keep a copy for up to 90 days so a person at FigHub can review it. An alert is emailed to our moderation team with a link to the image that expires after 7 days.</li><li>During those 90 days we may re-check the image automatically, to make sure our checks aren't refusing things by mistake. If a decision looks wrong, our team is told.</li></ul>
+    <h3>Decisions made automatically</h3>
+    <p>Some decisions are made by our systems without a person involved at first:</p>
+    <div class="table-wrap"><table><tr><th>What happens</th><th>Result</th></tr><tr><td>2 different photos refused within 30 days</td><td>A warning</td></tr><tr><td>3 different photos refused within 30 days</td><td>Your account is suspended until a person reviews it</td></tr><tr><td>A photo matches known child sexual abuse material</td><td>Your account is banned immediately and a report is made (see below)</td></tr></table></div>
+    <p>If your account is suspended or banned and you think we've got it wrong, email hello@fighub.app. <strong>A person will review the decision.</strong></p>
+    <h3>Reports from other collectors</h3>
+    <p>Any signed-in collector can report a profile or a photo. Reports are read by FigHub staff, who can dismiss the report or warn, suspend or ban the account. An email alert goes to our moderation team with both usernames, the reason and comment, and, where relevant, a link to the picture that expires after 7 days. We don't tell the person reported who reported them. If a report is upheld against someone who is connected with an under-18, the account is banned.</p>
+    <h3>Reporting child sexual abuse material</h3>
+    <p>If a photo matches known child sexual abuse material, we are required to report it. We report to the National Center for Missing &amp; Exploited Children (NCMEC) in the United States, which passes reports to law enforcement, including in the UK. The report includes the account's email address, username and account ID, the IP address used for the upload, the time, and the image's fingerprint. We never store the image. We keep our record of the incident for one year after the report, or longer if law enforcement asks us to, and we can't delete the account until then.</p>
+    <h2>Who we share data with</h2>
+    <p>We don't sell your data, and we don't share it for advertising. We use these companies to run FigHub, and each only gets what it needs for its job.</p>
+    <div class="table-wrap"><table><tr><th>Company</th><th>What it does for us</th><th>What it receives</th><th>Where</th></tr><tr><td>Supabase</td><td>Stores our database and files, and runs sign-in</td><td>Everything we store, plus technical logs including IP addresses</td><td>Ireland (EU)</td></tr><tr><td>Brickognize</td><td>Identifies figures and parts</td><td>Your scan photo, sent directly from your phone, so it also sees your IP address. No account details</td><td>May be outside the UK</td></tr><tr><td>OpenAI</td><td>Identifies figures; checks photos and usernames for harmful content</td><td>Every photo you upload, for the safety check; scan photos for identification when needed; usernames you choose; figure names. No account details</td><td>United States</td></tr><tr><td>Microsoft (PhotoDNA)</td><td>Detects known child sexual abuse material</td><td>A fingerprint of each photo, never the photo itself</td><td>May be outside the UK</td></tr><tr><td>Google</td><td>Sign in with Google (optional); Google Play subscriptions</td><td>Your sign-in; your purchases</td><td>United States</td></tr><tr><td>RevenueCat</td><td>Manages subscriptions and promo codes</td><td>Your account ID and purchase records. Not your email or name</td><td>United States</td></tr><tr><td>Brevo</td><td>Sends account emails (confirmation, password reset) and alerts to our moderation team</td><td>Your email address for account emails; usernames and report details in alerts</td><td>France (EU)</td></tr><tr><td>BrickLink and eBay</td><td>Price data</td><td>Figure names and IDs only. Nothing about you</td><td>United States</td></tr><tr><td>GitHub</td><td>Runs our scheduled maintenance jobs, such as erasing deleted accounts</td><td>Secure access to our database to do those jobs</td><td>United States</td></tr><tr><td>NCMEC</td><td>Receives reports of child sexual abuse material</td><td>See "Keeping FigHub safe"</td><td>United States</td></tr></table></div>
+    <h3>Other things to know</h3>
+    <ul><li><strong>Images of figures</strong> shown in the app are loaded from Rebrickable, BrickLink, Brickognize and our own storage. Like any website, those services see your phone's IP address when an image loads.</li><li><strong>eBay links.</strong> If you're 18 or over, the app may show links to find a figure on eBay. These are affiliate links: if you tap one and buy something, eBay may pay us a commission, and eBay knows the click came from FigHub. We send eBay nothing about you; your browser visits eBay as it would any site.</li><li><strong>Legal requests.</strong> We may share data if the law requires it, or to protect someone's safety.</li><li><strong>If FigHub is sold or merged,</strong> your data may pass to the new owner, who would have to keep to this policy.</li></ul>
+    <h3>Data outside the UK</h3>
+    <p>Some of the companies above process data outside the UK, including in the United States. Where they do, we rely on legal safeguards such as UK adequacy regulations or the ICO's International Data Transfer Agreement, so your data keeps a similar level of protection.</p>
+    <h2>How long we keep things</h2>
+    <div class="table-wrap"><table><tr><th>What</th><th>How long</th></tr><tr><td>Your account, collection, wishlist, photos and connections</td><td>Until you delete your account</td></tr><tr><td>Scan photos that pass the safety checks</td><td>Not kept (unless you save one or opted in to the photo library)</td></tr><tr><td>Photo library copies</td><td>Until you ask us to delete them, which you can do when you switch the library off, when you delete your account, or at any time by email</td></tr><tr><td>Refused photos</td><td>Up to 90 days</td></tr><tr><td>Anonymous usage stats</td><td>13 months</td></tr><tr><td>IP addresses used to limit heavy use</td><td>Usually about 2 days</td></tr><tr><td>Records of safety checks, reports, warnings and bans</td><td>Kept after an account is deleted, with the account ID removed, so we can spot repeat abuse and show what we did. A banned or reported username, and the text of a report, may stay in these records, and some stored file names may still contain an account ID</td></tr><tr><td>Child sexual abuse reports</td><td>One year from the report, or longer if law enforcement asks</td></tr><tr><td>Emails you send us</td><td>2 years</td></tr></table></div>
+    <h2>Deleting your account</h2>
+    <p>Go to <strong>Settings &gt; Delete My Data</strong>. There is also a <a href="delete-account">web page explaining how to delete your account</a>.</p>
+    <ol><li>Your profile is hidden from everyone straight away, and you're signed out.</li><li>For <strong>30 days</strong> you can change your mind: sign in and choose Recover.</li><li>After 30 days we erase your account: your email, date of birth, username, profile picture, collection, wishlist, Workshop builds, badges, photos, connections and scan history. Your photo library copies are erased too, unless you chose to leave them with us. We also ask RevenueCat to delete its record of you.</li></ol>
+    <p><strong>What stays:</strong> the safety records described above with your account ID removed, promo code redemptions and technical logs with your account ID removed, and records held by other companies under their own rules (for example, Google's record of your purchases).</p>
+    <p>Deleting your account doesn't cancel a subscription. Cancel it in Google Play first.</p>
+    <p>If you use FigHub without an account, your collection is stored only on your phone. "Delete My Data" removes your scan history from our servers; uninstalling the app removes the rest.</p>
+    <p>You can also ask us to delete your data by emailing hello@fighub.app.</p>
+    <h2>Our legal reasons</h2>
+    <p>UK data protection law says we need a valid reason (a "lawful basis") for each use of your data. Ours are:</p>
+    <div class="table-wrap"><table><tr><th>Reason</th><th>What it covers</th></tr><tr><td><strong>Contract</strong> (to provide the service you asked for)</td><td>Your account, sign-in, collection and backup, identifying figures from your photos, connections, subscriptions and promo codes</td></tr><tr><td><strong>Legal obligation</strong></td><td>Checking your age; checking content for illegal material; reporting child sexual abuse material; keeping records the law requires</td></tr><tr><td><strong>Legitimate interests</strong> (ours and other users', balanced against yours)</td><td>Checking photos and usernames for harmful content; handling reports, warnings, suspensions and bans; preventing abuse and heavy use; anonymous usage stats for adults; security logs</td></tr><tr><td><strong>Consent</strong> (you can withdraw it at any time)</td><td>The photo library; anonymous usage stats if you're under 18; showing your photos or collection value to other collectors</td></tr></table></div>
+    <p>Some safety work involves sensitive information, such as a report alleging a crime. We handle this only where the law allows, for safeguarding children and preventing or detecting unlawful acts.</p>
+    <h2>Your rights</h2>
+    <p>Under UK law you can ask us to:</p>
+    <ul><li><strong>give you a copy</strong> of your data;</li><li><strong>correct</strong> anything that's wrong;</li><li><strong>delete</strong> your data;</li><li><strong>limit or stop</strong> how we use it, including anything we do on the basis of legitimate interests;</li><li><strong>move your data</strong> to another service;</li><li><strong>have a person review</strong> an automated decision about you, such as a suspension or ban.</li></ul>
+    <p>Much of this you can do yourself in the app: edit your profile, change your privacy settings, export your collection (Pro) or delete your account. For anything else, email <strong>hello@fighub.app</strong>. We'll reply within one month. It's free.</p>
+    <p>If you withdraw consent, we stop. For the photo library, you choose whether we keep or delete the photos you've already shared. You can ask for a free copy of your data at any time, whichever plan you're on; we send it to the email address on your account.</p>
+    <p><strong>Complaints.</strong> Please tell us first so we can put it right. You can also complain to the UK Information Commissioner's Office at <a href="https://ico.org.uk/make-a-complaint/">ico.org.uk/make-a-complaint</a> or on 0303 123 1113.</p>
+    <h2>Changes to this policy</h2>
+    <p>If we change this policy in a way that matters, we'll tell you in the app or by email before the change takes effect. The date at the top shows when it was last updated.</p>
   </section>
 
-  <!-- ============ TERMS & CONDITIONS ============ -->
+  <!-- ============ TERMS OF SERVICE ============ -->
   <section class="doc" id="terms">
     <div class="doc-head">
-      <h1 class="doc-title">Terms &amp; Conditions</h1>
-      <p class="doc-meta"><strong>FigHub Ltd</strong> &nbsp;|&nbsp; Company No. 17307481 &nbsp;|&nbsp; ICO No. ZC185049 &nbsp;|&nbsp; hello@fighub.app &nbsp;·&nbsp; Last updated: 29 June 2026</p>
+      <h1 class="doc-title">Terms of Service</h1>
+      <p class="doc-meta"><strong>FigHub Ltd</strong> &nbsp;|&nbsp; hello@fighub.app &nbsp;·&nbsp; Last updated: 23 November 2026</p>
     </div>
-
-    <h2>1. Agreement to Terms</h2>
-    <p>By downloading, installing, or using the FigHub mobile application ("the App"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, do not use the App.</p>
-    <p>These Terms constitute a legally binding agreement between you and FigHub Ltd ("FigHub", "we", "us", "our"). FigHub Ltd is incorporated in England and Wales.</p>
-
-    <h2>2. Description of Service</h2>
-    <p>FigHub is a mobile application that allows users to:</p>
-    <ul>
-      <li>Photograph and identify minifigures using AI technology</li>
-      <li>Build and manage a personal digital collection of minifigures</li>
-      <li>Browse which sets contain their minifigures</li>
-      <li>Identify missing minifigures needed to complete sets</li>
-      <li>Access affiliate links to purchase minifigures from third-party marketplaces</li>
-      <li>Generate collection valuation and annual reports (Premium and Pro tiers)</li>
-      <li>Earn badges and track collection milestones</li>
-    </ul>
-
-    <h2>3. User Accounts and Tiers</h2>
-    <h3>3.1 Free Tier</h3>
-    <p>The Free tier provides:</p>
-    <ul>
-      <li>10 scans per calendar month</li>
-      <li>Collection storage for up to 50 minifigures</li>
-      <li>Access to set browsing and completion tracking</li>
-      <li>Access to affiliate purchase links</li>
-      <li>Basic badge and gamification features</li>
-    </ul>
-    <h3>3.2 Premium Tier (£4.99/month or annual equivalent)</h3>
-    <p>The Premium tier provides everything in Free, plus:</p>
-    <ul>
-      <li>50 scans per calendar month</li>
-      <li>Unlimited collection storage</li>
-      <li>Basic analytics (total value, theme breakdown, top 10 most valuable, rarity distribution)</li>
-      <li>Shareable profile link (fighub.app/collection/username)</li>
-      <li>Cloud backup (account required)</li>
-    </ul>
-    <h3>3.3 Pro Tier (£9.99/month or annual equivalent)</h3>
-    <p>The Pro tier provides everything in Premium, plus:</p>
-    <ul>
-      <li>Unlimited scans per calendar month</li>
-      <li>Unlimited collection storage</li>
-      <li>Full analytics including value over time, projections, profit/loss, best investment and most wanted report</li>
-      <li>Bulk scan</li>
-      <li>Shareable profile link (fighub.app/collection/username)</li>
-      <li>CSV collection export and import</li>
-      <li>PDF collection report</li>
-      <li>Instagram graphic export</li>
-      <li>Cloud backup (account required)</li>
-    </ul>
-    <h3>3.4 Tier Changes</h3>
-    <p>Scan counts reset on the first day of each calendar month. Unused scans do not roll over. FigHub reserves the right to adjust tier limits and pricing with reasonable notice to users.</p>
-
-    <h2>Collector List and Public Profiles</h2>
-    <p>FigHub allows users to create public profiles and connect with other collectors. Public profiles are opt-in and private by default. Users can build a collector list — a confirmed connections system where both parties must agree to connect. Privacy settings control exactly what other users can see, including collection contents and collection value. FigHub Ltd is not responsible for content shared on public profiles. Users can remove connections and make their profile private at any time.</p>
-
-    <h2>4. Image Collection and Data Consent</h2>
-    <div class="callout"><strong>THIS SECTION IS IMPORTANT. PLEASE READ IT CAREFULLY.</strong></div>
-    <p>By using the scan feature and confirming a minifigure identification, you explicitly consent to the following:</p>
-    <ul>
-      <li>The photos you take within the app will be uploaded to FigHub's secure cloud storage</li>
-      <li>Your images will be stored and used to improve FigHub's AI identification systems</li>
-      <li>Your images may be used as part of a training dataset to develop FigHub's proprietary machine learning model</li>
-      <li>Images are stored in compressed form and associated with identification metadata</li>
-      <li>Your images will not be shared with third parties for their own commercial purposes</li>
-      <li>You may request deletion of your images by contacting hello@fighub.app, subject to our data retention obligations</li>
-    </ul>
-    <p>You can opt out of AI training at any time via Settings → Privacy → "Contribute to AI training". Opting out does not affect your ability to scan minifigures — AI identification continues to work exactly the same way whether the toggle is on or off. You may still manually add minifigures to your collection without scanning.</p>
-    <p>By accepting these Terms, you confirm that you are the owner of the photos you submit or otherwise have the right to grant FigHub the licence described above.</p>
-
-    <h2>5. Subscriptions and Payments</h2>
-    <h3>5.1 Billing</h3>
-    <p>Subscriptions are billed through the Apple App Store or Google Play Store. Payment is charged to your app store account at confirmation of purchase. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</p>
-    <h3>5.2 Cancellation</h3>
-    <p>You may cancel your subscription at any time through your app store account settings. Cancellation takes effect at the end of the current billing period. No refunds are provided for partial billing periods, except as required by applicable law.</p>
-    <h3>5.3 Free Trial</h3>
-    <p>Where a free trial is offered, any unused portion of the trial period will be forfeited upon purchase of a subscription.</p>
-    <h3>5.4 Price Changes</h3>
-    <p>FigHub reserves the right to change subscription pricing. You will be notified of price changes before they take effect and will have the option to cancel before the new price applies.</p>
-
-    <h2>6. Affiliate Links</h2>
-    <p>The App contains affiliate links to third-party marketplaces including eBay and Amazon. When you click these links and make a purchase, FigHub may earn a commission at no additional cost to you.</p>
-    <p>FigHub is not responsible for the content, pricing, availability, or any aspect of third-party marketplaces. Any purchase you make through an affiliate link is solely between you and the relevant third party. We recommend you review the third party's terms and privacy policy before making a purchase.</p>
-    <p>Affiliate links are clearly provided as a convenience feature. We do not endorse any specific seller, listing, or product.</p>
-
-    <h2>7. Intellectual Property</h2>
-    <h3>7.1 FigHub Content</h3>
-    <p>All content within the App — including but not limited to software code, design, graphics, text, and the FigHub name and logo — is owned by or licensed to FigHub Ltd and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
-    <h3>7.2 Third-Party Content</h3>
-    <p>Minifigure names, set names, and associated data are sourced from third-party databases including Rebrickable and BrickLink. These remain the intellectual property of their respective owners. FigHub does not claim ownership of this data.</p>
-    <h3>7.3 Your Content</h3>
-    <p>You retain ownership of the photos you take within the App. By using the scan feature, you grant FigHub a non-exclusive, worldwide, royalty-free licence to store and use those images as described in Section 4 and our Privacy Policy.</p>
-
-    <h2>8. Prohibited Uses</h2>
-    <p>You agree not to:</p>
-    <ul>
-      <li>Use the App for any unlawful purpose</li>
-      <li>Attempt to reverse engineer, decompile, or extract the source code of the App</li>
-      <li>Scrape, harvest, or extract data from the App in an automated manner</li>
-      <li>Use the App to submit false, misleading, or malicious data</li>
-      <li>Attempt to circumvent subscription tier limits or access restrictions</li>
-      <li>Use the App in any way that could damage, disable, or impair our servers or services</li>
-      <li>Resell or sublicence access to the App</li>
-    </ul>
-
-    <h2>9. Disclaimers and Limitation of Liability</h2>
-    <h3>9.1 AI Accuracy</h3>
-    <p>FigHub uses AI technology to identify minifigures. Identifications are provided on a best-efforts basis and may not always be accurate. FigHub does not warrant that identifications will be correct in every case. You should verify identifications before making any purchasing decisions.</p>
-    <h3>9.2 Valuation Data</h3>
-    <p>Collection valuations provided by the App are estimates based on third-party market data and are provided for informational purposes only. They should not be relied upon for insurance, tax, legal, or financial purposes without independent verification. FigHub makes no warranty as to the accuracy or completeness of valuation data.</p>
-    <h3>9.3 Third-Party Services</h3>
-    <p>FigHub relies on third-party APIs and services. We are not responsible for any downtime, inaccuracy, or disruption caused by those third parties.</p>
-    <h3>9.4 Limitation of Liability</h3>
-    <p>To the fullest extent permitted by law, FigHub Ltd shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App. Our total liability to you for any claim arising from these Terms or your use of the App shall not exceed the amount you paid to FigHub in the 12 months preceding the claim.</p>
-    <p>Nothing in these Terms limits liability for death or personal injury caused by negligence, fraud, or any other liability that cannot be excluded by law.</p>
-
-    <h2>10. Changes to the Service</h2>
-    <p>FigHub reserves the right to modify, suspend, or discontinue any part of the App at any time with reasonable notice. We will not be liable to you for any modification, suspension, or discontinuation of the service.</p>
-
-    <h2>11. Termination</h2>
-    <p>FigHub may suspend or terminate your access to the App if you breach these Terms. Upon termination, your right to use the App ceases immediately. Provisions that by their nature should survive termination (including intellectual property, disclaimers, and limitation of liability) will survive.</p>
-
-    <h2>12. Governing Law and Disputes</h2>
-    <p>These Terms are governed by the laws of England and Wales. Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
-    <p>We encourage you to contact us at hello@fighub.app in the first instance to resolve any dispute informally before resorting to legal proceedings.</p>
-
-    <h2>13. Changes to These Terms</h2>
-    <p>We may update these Terms from time to time. We will notify you of material changes through the App or by email. Continued use of the App after changes constitutes acceptance of the updated Terms. If you do not agree to the updated Terms, you must stop using the App.</p>
-
-    <h2>BrickLink Attribution</h2>
-    <p>The term 'BrickLink' is a trademark of the LEGO Group BrickLink. This application uses the BrickLink API but is not endorsed or certified by LEGO BrickLink, Inc.</p>
-
-    <h2>Account Deletion</h2>
-    <p>When you delete your FigHub account, your personal data is retained for 30 days before permanent deletion. This grace period allows recovery of accidentally deleted accounts. To request recovery of a deleted account, contact hello@fighub.app within 30 days of deletion. After 30 days, deletion is permanent and irreversible. Anonymised scan images retained for AI training are not deleted as they contain no personal data.</p>
-
-    <h2>14. Contact</h2>
-    <p>For any questions about these Terms, please contact:</p>
-    <p><strong>FigHub Ltd</strong><br>Email: <a href="mailto:hello@fighub.app">hello@fighub.app</a></p>
-    <p style="color:var(--muted);font-size:13px;margin-top:24px;">© 2026 FigHub Ltd. Company No. 17307481. Registered in England and Wales. ICO Registration No. ZC185049.</p>
+    <h2>The short version</h2>
+    <p>These are the rules for using FigHub. The full terms below are what count, but here are the main points.</p>
+    <ul><li><strong>FigHub is for collectors aged 13 and over.</strong></li><li><strong>It helps you identify, organise and value LEGO® minifigures.</strong> Identification isn't always right, and values are estimates, not valuations.</li><li><strong>Your collection is yours.</strong> You own your photos and your data.</li><li><strong>The free plan is free.</strong> Paid plans are monthly subscriptions through Google Play. You can cancel at any time.</li><li><strong>Keep it about minifigures.</strong> No harmful, illegal or offensive photos or usernames. Every photo is checked.</li><li><strong>We can suspend or ban accounts that break the rules,</strong> and you can ask a person to review that.</li><li><strong>FigHub is independent.</strong> It isn't made, sponsored or endorsed by the LEGO Group.</li><li><strong>Questions?</strong> Email hello@fighub.app.</li></ul>
+    <h2>About these terms</h2>
+    <p>FigHub is provided by <strong>FigHub Ltd</strong>, a company registered in England and Wales (company number 17307481, registered office 38 Edmund Court, Basingstoke RG24 9SZ). In these terms, "we" and "us" mean FigHub Ltd, and "FigHub" means the app and the fighub.app website.</p>
+    <p>By using FigHub you agree to these terms. If you don't agree, please don't use it. Our <a href="https://www.fighub.app/legal#privacy-policy">Privacy Policy</a> explains how we use your data and is separate from these terms.</p>
+    <p>Contact: hello@fighub.app.</p>
+    <h2>Who can use FigHub</h2>
+    <ul><li>You must be <strong>13 or over</strong>. We ask for your date of birth, and you must give your real one.</li><li>If you're <strong>under 18</strong>, please read these terms with a parent or guardian and make sure they're happy for you to use FigHub. Some features work differently for under-18s; the Privacy Policy explains how.</li><li>You can use FigHub <strong>without an account</strong>. Your collection then lives only on your phone.</li></ul>
+    <h2>Your account</h2>
+    <ul><li>Keep your sign-in details to yourself. You're responsible for what happens on your account.</li><li>One person per account. Don't create an account for someone else or pretend to be someone you're not.</li><li>Tell us at hello@fighub.app if you think someone else has used your account.</li><li>You can delete your account at any time in Settings. It's erased after 30 days, and you can change your mind until then.</li></ul>
+    <h2>What FigHub does, and its limits</h2>
+    <p>FigHub helps you identify minifigures from photos, keep a record of your collection, track sets and rebuild figures, and see roughly what your figures are worth.</p>
+    <p><strong>Identification isn't always right.</strong> Matches come from automated image recognition. Always check a match yourself, especially before buying, selling or trading. FigHub does not check whether a figure or part is genuine.</p>
+    <p><strong>Values are estimates.</strong> They are based on recent market data from other services, such as BrickLink and eBay. They are not valuations, offers to buy, or financial or insurance advice. Prices change, data can be missing or wrong, and condition matters. The collection report is a record for your own use, not a professional valuation.</p>
+    <p><strong>The catalogue comes from other services</strong> and may have gaps or mistakes. Tell us if you spot one.</p>
+    <p><strong>Availability.</strong> We work to keep FigHub running, but we can't promise it will always be available or free of faults. Features that rely on other companies' services may stop working if those services change or go down. We may add, change or remove features; if a change takes away something you've paid for, see "Changes" below.</p>
+    <p><strong>FigHub is independent.</strong> LEGO® and Minifigure are trademarks of the LEGO Group, which does not sponsor, authorise or endorse FigHub. The term 'BrickLink' is a trademark of the LEGO Group BrickLink. This application uses the BrickLink API but is not endorsed or certified by LEGO BrickLink, Inc. FigHub is not affiliated with the LEGO Group, BrickLink, eBay, Rebrickable or Brickognize.</p>
+    <h2>Plans and payments</h2>
+    <div class="table-wrap"><table><tr><th></th><th>Free</th><th>Premium</th><th>Pro</th></tr><tr><td>Scans each month</td><td>10</td><td>50</td><td>Unlimited</td></tr><tr><td>Collection size</td><td>50 minifigures</td><td>Unlimited</td><td>Unlimited</td></tr><tr><td>Analytics</td><td>Summary</td><td>Full</td><td>Full, plus value over time</td></tr><tr><td>Set completion</td><td>Preview</td><td>Full</td><td>Full</td></tr><tr><td>Bulk Scan</td><td></td><td></td><td>Included</td></tr><tr><td>Import, export to Excel and PDF collection report</td><td></td><td></td><td>Included</td></tr></table></div>
+    <p>The app always shows your limits before you start, and current prices before you buy. Prices are in pounds sterling and include VAT where it applies. "Unlimited" is for normal personal use; we may limit automated or abusive use.</p>
+    <p><strong>Paying.</strong> Premium and Pro are subscriptions bought through Google Play. They renew automatically each billing period until you cancel. Google Play takes the payment; we never see your card details.</p>
+    <p><strong>Cancelling.</strong> You can cancel at any time in Google Play (Payments &amp; subscriptions). You keep your plan until the end of the period you've paid for. Deleting your account or the app does not cancel a subscription.</p>
+    <p><strong>Changing plan.</strong> You can move between Premium and Pro in the app. Google Play works out any difference in price.</p>
+    <p><strong>Refunds.</strong> Refunds are handled by Google Play under its refund policy. You may also have a legal right to cancel a new subscription within 14 days. If you think you've been charged in error, email hello@fighub.app and we'll help. Nothing in these terms affects your legal rights as a consumer.</p>
+    <p><strong>If you go back to Free.</strong> Your collection is kept and you can still view all of it. If you have more than 50 minifigures, you won't be able to add more until you're under the limit or upgrade again.</p>
+    <p><strong>Price changes.</strong> If we change a price, we'll tell you in advance, and it won't apply until your next renewal. You can cancel before then.</p>
+    <p><strong>Under-18s.</strong> We don't prompt under-18s to buy a plan. If you're under 18 and choose one, you need a parent or guardian's permission.</p>
+    <h2>Promo codes</h2>
+    <ul><li>A promo code gives you a paid plan free for a set time. When it ends, you go back to Free and keep your collection.</li><li>Each code can be used once per account, and may have an expiry date and a limit on how many people can use it.</li><li>If you already pay for the same or a higher plan, a code moves your next payment back by that number of days. You can't change plan until that date.</li><li>A code for a higher plan than the one you pay for can't be used alongside your subscription.</li><li>Codes have no cash value and can't be sold or exchanged. We may cancel a code that's been misused.</li></ul>
+    <h2>Your content</h2>
+    <p><strong>You own it.</strong> Your photos, username, profile picture, notes and collection data stay yours.</p>
+    <p><strong>What you allow us to do.</strong> So that FigHub can work, you give us permission to store, process and display your content as needed to run the service: for example, to check a photo, identify the figure in it, back up your collection, and show your profile to the people you've chosen. This permission ends when you delete the content or your account, apart from the limited records described in the Privacy Policy.</p>
+    <p><strong>The photo library is separate and optional.</strong> We only keep copies of your scan photos to improve identification if you're 18 or over and have switched this on. If you switch it off, you choose whether we keep or delete the photos you've already shared.</p>
+    <p><strong>What you promise.</strong> You have the right to upload what you upload, and it doesn't break these terms or anyone else's rights. Only upload photos you took, or have permission to use.</p>
+    <p><strong>Ours.</strong> The FigHub app, name, logo and design belong to us. You may use the app for your own personal, non-commercial collecting. Catalogue images and data belong to their own owners.</p>
+    <h2>The rules</h2>
+    <p>FigHub is used by teenagers as well as adults. Please keep it friendly and about minifigures.</p>
+    <h3>Don't upload, or use as a username or profile picture, anything that:</h3>
+    <ul><li>is sexual, violent, hateful, threatening or harassing;</li><li>sexualises or endangers children in any way;</li><li>is illegal, or encourages something illegal;</li><li>shows another person without their permission, or shares anyone's personal details;</li><li>you don't have the right to use;</li><li>is meant to mislead, such as pretending to be another person, FigHub or the LEGO Group.</li></ul>
+    <h3>Don't:</h3>
+    <ul><li>scan things that aren't minifigures or parts in order to test or get round our safety checks;</li><li>harass other collectors, or keep trying to contact someone who has declined or blocked you;</li><li>use FigHub to contact under-18s for any purpose other than collecting;</li><li>copy, scrape or bulk-download our catalogue, prices or other users' data;</li><li>try to break, overload, reverse-engineer or get round the limits or security of the app;</li><li>share or sell your account, or create accounts to get round a limit, a suspension or a ban;</li><li>use FigHub for a business without our written agreement.</li></ul>
+    <h2>How we enforce the rules</h2>
+    <ul><li><strong>Every photo and username is checked automatically</strong> before it's used. A refused photo isn't added.</li><li><strong>Refused photos count against your account.</strong> Two different refused photos within 30 days brings a warning in the app. Three suspends your account until a person at FigHub reviews it.</li><li><strong>Reports.</strong> Other collectors can report a profile or photo. We review reports and may dismiss them, or warn, suspend or ban an account.</li><li><strong>Child sexual abuse material.</strong> A match leads to an immediate ban and a report to the authorities.</li><li><strong>Serious or repeated breaches</strong> of these rules may lead to a ban without warning.</li></ul>
+    <p><strong>If you think we got it wrong,</strong> email hello@fighub.app. A person will look at it and reply. While an account is suspended or banned, other people can't see its profile or collection.</p>
+    <p>If you're banned for breaking these rules, you aren't entitled to a refund from us for time left on a subscription, except where the law says otherwise. Remember to cancel the subscription in Google Play.</p>
+    <h2>Other collectors</h2>
+    <ul><li>Connecting is optional. There is no chat or messaging in FigHub.</li><li>You choose whether your profile is Public or Private, and what connected collectors can see.</li><li>You can decline a request, disconnect or block someone at any time. They aren't told.</li><li>You can report a profile or photo from the app. We don't tell the person who reported them.</li><li>Other collectors' profiles and photos are theirs. Don't copy or share them outside FigHub without permission.</li><li>We aren't responsible for what other collectors upload, or for any trade, sale or meeting you arrange with someone outside FigHub. Take care, and if you're under 18, talk to a parent or guardian first.</li></ul>
+    <h2>Links to other sites</h2>
+    <p>FigHub may link to other sites, such as eBay or BrickLink. Those sites have their own terms and privacy policies, and we aren't responsible for them. Some links to eBay are affiliate links, which means we may earn a commission if you buy something, at no extra cost to you. These links aren't shown to under-18s.</p>
+    <h2>Complaints</h2>
+    <p>If you're unhappy with FigHub, with content you've seen, or with a decision we've made about your account or a report, email <strong>hello@fighub.app</strong>. Tell us what happened and your username. We aim to reply within 3 working days, and sooner for anything involving a child's safety.</p>
+    <h2>Our responsibility to you</h2>
+    <p>We'll provide FigHub with reasonable care and skill. If something we've done wrong causes you loss that was a foreseeable result, we're responsible for it. But:</p>
+    <ul><li>FigHub is for personal collecting. We aren't responsible for business losses, such as lost profit or lost sales.</li><li>We aren't responsible for decisions you make based on an identification or an estimated value, such as what you pay for or sell a figure for.</li><li>We aren't responsible for problems caused by things outside our reasonable control, such as another company's service failing.</li><li>Cloud backup needs an account and a connection. Keep your own export if your records matter to you.</li></ul>
+    <p>Nothing in these terms limits our responsibility for death or personal injury caused by our negligence, for fraud, or for anything else the law doesn't allow us to limit. If you're a consumer, you have legal rights about digital content and services that these terms don't take away.</p>
+    <h2>Changes</h2>
+    <p><strong>To FigHub.</strong> We may update the app to improve it, fix problems or meet legal requirements. If we make a change that significantly reduces what a paid plan gives you, we'll tell you first, and you can cancel.</p>
+    <p><strong>To these terms.</strong> If we change these terms in a way that matters, we'll tell you in the app or by email before the change applies. If you keep using FigHub after that, the new terms apply. If you don't agree, you can stop using FigHub and delete your account.</p>
+    <h2>Ending</h2>
+    <ul><li><strong>You</strong> can stop using FigHub and delete your account at any time.</li><li><strong>We</strong> can suspend or close an account that breaks these terms, as described above.</li><li><strong>If we ever close FigHub,</strong> we'll give you at least 30 days' notice where we can, so you can export your collection, and we'll stop subscriptions renewing.</li></ul>
+    <h2>The law that applies</h2>
+    <p>These terms are governed by the law of England and Wales. If you live in Scotland or Northern Ireland, you can bring a claim in your local courts. If you live outside the UK, you keep any consumer protections your own country's law gives you.</p>
+    <p>If a court finds part of these terms can't be enforced, the rest still applies. If we don't enforce a term straight away, we can still enforce it later. These terms are between you and us; nobody else has rights under them.</p>
+    <h2>Contact</h2>
+    <p>FigHub Ltd · hello@fighub.app · 38 Edmund Court, Basingstoke RG24 9SZ</p>
   </section>
 
   <!-- ============ COMPANY INFORMATION (discreet) ============ -->
   <div class="company" id="company-information">
     FigHub Ltd is a private limited company registered in England and Wales.<br>
     Company No. 17307481 | ICO Registration No. ZC185049<br>
-    Registered office: 38 Edmund Court, RG24 9SZ<br>
-    Contact: <a href="mailto:hello@fighub.app">hello@fighub.app</a>
+    Registered office: 38 Edmund Court, Basingstoke RG24 9SZ<br>
+    Contact: <a href="mailto:hello@fighub.app">hello@fighub.app</a> | <a href="delete-account">Delete your account</a>
   </div>
 
 </div>
